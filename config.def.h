@@ -63,6 +63,8 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *volup[] = {"pactl", "set-sink-volume", "0", "+5%", NULL };
 static const char *voldown[] = {"pactl", "set-sink-volume", "0", "-5%", NULL };
 static const char *mutevol[] = {"pactl", "set-sink-mute", "0", "toggle", NULL };
+static const char *brightnessup[] = {"xbacklight", "-inc", "5", NULL};
+static const char *brightnessdown[] = {"xbacklight", "-dec", "5", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -102,6 +104,8 @@ static Key keys[] = {
 	{0, 				XF86XK_AudioLowerVolume,	spawn,	{.v = voldown} },
 	{0, 				XF86XK_AudioRaiseVolume,	spawn,	{.v = volup} },
 	{0, 				XF86XK_AudioMute,	spawn,	{.v = mutevol} },
+	{0, 				XF86XK_MonBrightnessUp,	spawn,	{.v = brightnessup} },
+	{0, 				XF86XK_MonBrightnessDown,	spawn,	{.v = brightnessdown} },
 };
 
 /* button definitions */
